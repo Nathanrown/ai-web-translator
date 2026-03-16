@@ -1,0 +1,31 @@
+# Chrome Extension
+*.crx
+*.pem
+*.zip
+
+# Node modules
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API Keys (never commit these!)
+.env
+.env.local
+*.key
+*.secret
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
