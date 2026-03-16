@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Icon Generator</title>
+</head>
+<body>
+  <canvas id="canvas" width="128" height="128"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // 背景渐变
+    const gradient = ctx.createLinearGradient(0, 0, 128, 128);
+    gradient.addColorStop(0, '#667eea');
+    gradient.addColorStop(1, '#764ba2');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 128, 128);
+    
+    // 地球图标
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(64, 64, 40, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // 大陆简化版
+    ctx.fillStyle = '#667eea';
+    ctx.beginPath();
+    ctx.arc(50, 55, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(78, 70, 12, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // A 字母
+    ctx.fillStyle = 'white';
+    ctx.font = 'bold 48px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('A', 64, 64);
+    
+    // 下载
+    const link = document.createElement('a');
+    link.download = 'icon128.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  </script>
+</body>
+</html>

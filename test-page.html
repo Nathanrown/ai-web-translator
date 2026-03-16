@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web Translator - Test Page</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 { color: #667eea; }
+    .test-section {
+      background: #f5f5f5;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    code {
+      background: #e0e0e0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .math {
+      font-family: 'Times New Roman', serif;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 AI Web Translator Test Page</h1>
+  
+  <div class="test-section">
+    <h2>Welcome!</h2>
+    <p>This is a test page for the AI Web Translator Chrome extension. You can use this page to test the translation functionality.</p>
+    <p>The extension supports multiple AI models including GPT-4, Claude, and Gemini. It translates content on-demand in a waterfall pattern.</p>
+  </div>
+  
+  <div class="test-section">
+    <h2>Features</h2>
+    <p>1. <strong>Side-by-side view</strong> - Original text on the left, translation on the right</p>
+    <p>2. <strong>Synchronized scrolling</strong> - Both panels scroll together</p>
+    <p>3. <strong>Hover highlight</strong> - Hover over text to highlight corresponding translation</p>
+    <p>4. <strong>Smart filtering</strong> - Code, formulas, and navigation are filtered out</p>
+  </div>
+  
+  <div class="test-section">
+    <h2>Code Example (Should not be translated)</h2>
+    <pre><code>function translate(text) {
+  return fetch('/api/translate', {
+    method: 'POST',
+    body: JSON.stringify({ text })
+  });
+}</code></pre>
+  </div>
+  
+  <div class="test-section">
+    <h2>Math Formula (Should not be translated)</h2>
+    <p class="math">E = mc²</p>
+    <p class="math">∫₀^∞ e^(-x²) dx = √π/2</p>
+  </div>
+  
+  <div class="test-section">
+    <h2>Sample Content</h2>
+    <p>Artificial intelligence has revolutionized many aspects of modern technology. From natural language processing to computer vision, AI systems are becoming increasingly sophisticated.</p>
+    <p>Machine learning, a subset of AI, enables computers to learn from data without being explicitly programmed. Deep learning, using neural networks with multiple layers, has achieved remarkable results in various domains.</p>
+    <p>The future of AI holds immense potential, with applications ranging from healthcare diagnostics to autonomous vehicles. However, ethical considerations and responsible AI development remain crucial.</p>
+  </div>
+  
+  <div class="test-section">
+    <h2>How to Test</h2>
+    <p>1. Install the extension in Chrome</p>
+    <p>2. Configure your API key in the popup</p>
+    <p>3. Click the extension icon to start translation</p>
+    <p>4. Observe the side-by-side translation</p>
+    <p>5. Try scrolling and hovering to see the synchronization features</p>
+  </div>
+</body>
+</html>
