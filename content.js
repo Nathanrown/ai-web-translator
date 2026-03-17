@@ -8,8 +8,13 @@ let isTranslating = false;
 
 // 初始化
 async function init() {
-  const result = await chrome.storage.local.get('settings');
-  settings = result.settings || {};
+  try {
+    const result = await chrome.storage.local.get('settings');
+    settings = result.settings || {};
+  } catch (error) {
+    console.error('Failed to load settings:', error);
+    settings = {};
+  }
   
   // 监听来自 popup 的消息
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -19,6 +24,7 @@ async function init() {
       settings = message.settings;
     }
     sendResponse({ success: true });
+    return true;
   });
   
   // 自动翻译

@@ -1,6 +1,11 @@
 # 🌐 AI Web Translator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue)](https://chrome.google.com/webstore)
+
 一个强大的 Chrome 浏览器插件，使用大模型实时翻译网页内容。
+
+![AI Web Translator](screenshots/banner.png)
 
 ## ✨ 特性
 
@@ -137,22 +142,70 @@ chrome-web-translator/
 
 ### 翻译失败
 
-1. 检查 API Key 是否正确
+**问题：** 点击开始翻译后没有反应
+
+**解决方案：**
+1. 检查 API Key 是否正确（设置 → API Key）
 2. 确认模型名称正确
 3. 检查网络连接
-4. 查看浏览器控制台错误 (F12)
+4. 按 F12 打开控制台查看错误信息
+5. 确保 API Key 有足够余额
 
 ### 面板不显示
 
-1. 刷新网页
+**问题：** 点击图标后翻译面板没有出现
+
+**解决方案：**
+1. 刷新网页（Ctrl+R / Cmd+R）
 2. 重新点击插件图标
-3. 检查扩展是否启用
+3. 检查扩展是否启用（chrome://extensions/）
+4. 检查控制台是否有错误
 
 ### 翻译质量差
 
-1. 尝试更强大的模型 (如 GPT-4, Claude 3)
+**问题：** 翻译结果不准确或不流畅
+
+**解决方案：**
+1. 尝试更强大的模型（GPT-4 > GPT-3.5）
 2. 调整目标语言设置
 3. 关闭过滤选项重试
+4. 检查原文是否包含特殊格式
+
+### 同步滚动失效
+
+**问题：** 两侧窗口不同步滚动
+
+**解决方案：**
+1. 在设置中关闭再重新开启"同步滚动"
+2. 刷新页面
+3. 检查是否滚动到了未翻译区域
+
+### API 速率限制
+
+**问题：** 收到 "Rate limit exceeded" 错误
+
+**解决方案：**
+1. 等待几分钟后重试
+2. 减少批量翻译的大小
+3. 升级 API 套餐
+4. 使用缓存（已翻译的内容会缓存）
+
+## 💬 常见问题
+
+### Q: 支持哪些语言？
+A: 支持几乎所有语言，包括中文、英文、日文、韩文、法文、德文、西班牙文等。
+
+### Q: 翻译的内容会保存吗？
+A: 翻译结果会缓存在本地，但刷新页面后需要重新翻译。
+
+### Q: 可以在手机上使用吗？
+A: 不行，Chrome 扩展仅支持桌面版 Chrome 浏览器。
+
+### Q: 是否免费？
+A: 扩展本身免费，但需要自备大模型 API Key（会产生 API 调用费用）。
+
+### Q: 安全吗？
+A: 非常安全。所有 API 调用直接使用你的 API Key，不经过任何中间服务器。
 
 ## 📝 开发
 

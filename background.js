@@ -33,7 +33,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'getSettings') {
     chrome.storage.local.get('settings', (result) => {
-      sendResponse(result.settings);
+      sendResponse(result.settings || {});
     });
     return true;
   }
@@ -41,7 +41,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'translate') {
     translateText(message.text, message.settings)
       .then(result => sendResponse(result))
-      .catch(error => sendResponse({ error: error.message }));
+      .catch(error => {
+        console.error('Translation error:', error);
+        sendResponse({ error: error.message });
+      });
     return true;
   }
 });
