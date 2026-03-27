@@ -10,10 +10,26 @@ let isTranslating = false;
 async function init() {
   try {
     const result = await chrome.storage.local.get('settings');
-    settings = result.settings || {};
+    settings = result.settings || {
+      targetLang: 'zh-CN',
+      autoTranslate: false,
+      syncScroll: true,
+      hoverHighlight: true,
+      filterCode: true,
+      filterMath: true,
+      filterNav: true
+    };
   } catch (error) {
     console.error('Failed to load settings:', error);
-    settings = {};
+    settings = {
+      targetLang: 'zh-CN',
+      autoTranslate: false,
+      syncScroll: true,
+      hoverHighlight: true,
+      filterCode: true,
+      filterMath: true,
+      filterNav: true
+    };
   }
   
   // 监听来自 popup 的消息
